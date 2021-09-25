@@ -16,4 +16,7 @@ export class CrudService {
   registerUser(data:User): Observable<any>{
     return this.clienteHttp.post(this.API+"?insertar=1",data);
   }
+
+  updateUser(data:User): void{
+  }
 }

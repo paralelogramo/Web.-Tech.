@@ -25,7 +25,7 @@ export class RegisterComponent {
 
 
   register():any{
-    var a = this.crudService.registerUser(this.formularioRegistro.value).subscribe();
+    this.crudService.registerUser(this.formularioRegistro.value).subscribe();
     this.formularioRegistro.reset();
   }
 
