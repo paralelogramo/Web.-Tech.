@@ -1,0 +1,35 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Registrarse</mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form" [formGroup]="formularioRegistro" (ngSubmit)="register()">
+  
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nombre de Usuario"
+            formControlName=nickname>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput id="email" placeholder="Correo"
+            formControlName=email>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput id="password" placeholder="Contraseña"
+            formControlName=password>
+          </mat-form-field>       
+          
+          <!-- <mat-form-field class="example-full-width">
+            <input matInput id="form_cpass" placeholder="Confirmar Contraseña">
+          </mat-form-field>        -->
+  
+        </mat-card-content>
+  
+        <button mat-stroked-button color="accent" class="btn-block">Registrar</button>
+  
+      </form>
+    </mat-card>
+  </div>
