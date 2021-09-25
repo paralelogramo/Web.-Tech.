@@ -10,11 +10,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { EditinfoComponent } from './components/editinfo/editinfo.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'signin' },
   { path: 'signin', component: SigninComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'edit', component: EditinfoComponent }
 ];
 
 @NgModule({
@@ -22,6 +24,7 @@ const routes: Routes = [
     AppComponent,
     SigninComponent,
     RegisterComponent,
+    EditinfoComponent,
   ],
   imports: [
     BrowserModule,
