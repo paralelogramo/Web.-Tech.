@@ -20,7 +20,11 @@ export class CrudService {
     return this.clienteHttp.post(`${this.baseUrl}/registerUser.php`,user,{responseType: 'text'});
   }
 
-  getUser(email: String, pass: String): Observable<Object>{
-    return this.clienteHttp.get(`${this.baseUrl}/getUser.php?email=${email}&pass=${pass}`);
+  getUser(user: User): Observable<Object>{
+    let headers= new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    const httpOptions = {
+      headers: headers
+    };
+    return this.clienteHttp.post(`${this.baseUrl}/getUser.php`,user);
   }
 }

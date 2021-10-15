@@ -17,10 +17,7 @@ interface Type {
 })
 export class SigninComponent{
 
-  email: String = "";
-  pass: String = "";
-
-  aux: User = new User(undefined,"",undefined,"","","",undefined,undefined);
+  userModel: User = new User(undefined,"",undefined,"","","",undefined,undefined);
 
   types: Type[] = [
     {value: 'estudiante', viewValue: 'Estudiante'},
@@ -35,9 +32,9 @@ export class SigninComponent{
     private snackBar: MatSnackBar
     ) { }
   
-  login(): any{
-    this.crudService.getUser(this.email, this.pass).subscribe((user: User )=> {
-      if (user.email===this.email && user.pass===this.pass){
+  login(): any{    
+    this.crudService.getUser(this.userModel).subscribe((user: User) =>{
+      if (user.email === this.userModel.email){
         this.snackBar.open('¡Bienvenid@ '+user.nick+'!', undefined, {
           duration: 2000,        
         })
@@ -49,6 +46,10 @@ export class SigninComponent{
         })
       }
     });
+
+    // this.crudService.getUser(this.userModel).subscribe((user: User )=> {
+    //   
+    // });
   }
 
   goRegister(): any{
