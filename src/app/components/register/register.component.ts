@@ -1,32 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-
-import { CrudService } from 'src/app/services/crud.service';
+import { Router } from '@angular/router';
+import { CrudService } from '../../services/crud.service';
+import { User } from 'src/app/services/Users';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
 
-  formularioRegistro:FormGroup;
+  userModel = new User("","","","","");
 
   constructor(
-    public formulario:FormBuilder,
-    private crudService:CrudService
-    ) {
-    this.formularioRegistro = this.formulario.group({
-      nickname:[''],
-      email:[''],
-      password:['']
+    private router: Router,
+    private crudService: CrudService,
+    private snackBar: MatSnackBar
+    ) {}
+
+  ngOnInit(): void {
+  }
+
+  registerUser(): any{
+    const res = this.crudService.register(this.userModel).subscribe(() => {      
+      this.snackBar.open('Usuario Registrado con Éxito!', undefined, {
+        duration: 2000,        
+      })
+      this.router.navigateByUrl('/signin');
     });
-   }
+  }
+  goRegister(): any{
+    this.router.navigateByUrl('/register');
+  }
 
-
-  register():any{
-    this.crudService.registerUser(this.formularioRegistro.value).subscribe();
-    this.formularioRegistro.reset();
+  goLogin(): any{
+    this.router.navigateByUrl('/signin');
   }
 
 }

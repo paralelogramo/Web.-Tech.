@@ -1,35 +1,43 @@
-<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+<div>
+    <mat-toolbar color="primary" class="app-header">
+      <div><a href="#" target="_blank" class="positronx">Me Anoto!</a></div>
+      <span class="nav-tool-items">
+        <a mat-button (click)="goLogin()">Iniciar Sesion</a>
+        <a mat-button mat-raised-button (click)="goRegister()">Registrarse</a>
+      </span>
+    </mat-toolbar>
+  </div>
+  
+  <div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box">
       <mat-card-header>
-        <mat-card-title>Registrarse</mat-card-title>
+        <mat-card-title>Registro</mat-card-title>
       </mat-card-header>
   
-      <form class="example-form" [formGroup]="formularioRegistro" (ngSubmit)="register()">
-  
+      <form class="example-form" (ngSubmit)="registerUser()">
         <mat-card-content>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Nombre de Usuario"
-            formControlName=nickname>
+            <input matInput placeholder="Nombres" [(ngModel)]="userModel.mainName" name="mainName">
           </mat-form-field>
   
           <mat-form-field class="example-full-width">
-            <input matInput id="email" placeholder="Correo"
-            formControlName=email>
+            <input matInput placeholder="Apellidos" [(ngModel)]="userModel.surName" name="surName">
           </mat-form-field>
-  
+
           <mat-form-field class="example-full-width">
-            <input matInput id="password" placeholder="Contraseña"
-            formControlName=password>
-          </mat-form-field>       
-          
-          <!-- <mat-form-field class="example-full-width">
-            <input matInput id="form_cpass" placeholder="Confirmar Contraseña">
-          </mat-form-field>        -->
-  
+            <input matInput placeholder="Apodo" [(ngModel)]="userModel.nick" name="nick">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" [(ngModel)]="userModel.email" name="email">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Contraseña" [(ngModel)]="userModel.pass" name="pass">
+          </mat-form-field>
         </mat-card-content>
-  
-        <button mat-stroked-button color="accent" class="btn-block">Registrar</button>
-  
+
+        <button mat-stroked-button color="accent" class="btn-block" type="submit">Registrarse</button>
       </form>
     </mat-card>
   </div>

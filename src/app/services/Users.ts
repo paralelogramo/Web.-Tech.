@@ -1,6 +1,9 @@
 export class User{
-    id!: String;
-    nickname!: String;
-    email!: String;
-    password!: String;
+    constructor(
+        public mainName: String,
+        public surName: String,
+        public nick: String,
+        public email: String,
+        public pass: String
+    ){}
 }

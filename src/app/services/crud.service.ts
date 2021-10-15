@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-
-import { HttpClient } from '@angular/common/http'; 
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 import { User } from './Users';
 
 @Injectable({
@@ -9,14 +7,15 @@ import { User } from './Users';
 })
 export class CrudService {
 
-  API: string = 'http://localhost/users/';
+  baseUrl = "http://localhost/meanoto"
 
   constructor( private clienteHttp: HttpClient ) {}
 
-  registerUser(data:User): Observable<any>{
-    return this.clienteHttp.post(this.API+"?insertar=1",data);
-  }
-
-  updateUser(data:User): void{
+  register(user: User) {
+    let headers= new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    const httpOptions = {
+      headers: headers
+    };
+    return this.clienteHttp.post(`${this.baseUrl}/registerUser.php`,user,{responseType: 'text'});
   }
 }

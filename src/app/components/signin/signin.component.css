@@ -1,0 +1,29 @@
+.main-wrapper{
+    background-image: url("https://i.ibb.co/dLtDCFh/Me-Anoto-1500-x-1500-px-2.png");
+    background-repeat: no-repeat;
+    background-size: 35%;
+    background-attachment: fixed;
+    background-position: center;
+    width: auto;
+    height: 100%;
+}
+
+.nav-bar{
+    background-color: rgb(67, 67, 235);
+    height: 50px;
+}
+
+.button{
+    margin: 0px 5px;
+}
+
+.button1{
+    color:white;
+}
+
+.nav-item-1{
+    border-color: red;
+    border-width: 10px;
+    width: 50%;
+    height: 100%;
+}
