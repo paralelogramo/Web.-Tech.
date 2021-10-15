@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudService } from '../../services/crud.service';
 import { User } from 'src/app/services/Users';
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +11,7 @@ import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 })
 export class RegisterComponent implements OnInit {
 
-  userModel = new User("","","","","");
+  userModel = new User(undefined,"",undefined,"","","",undefined,undefined);
 
   constructor(
     private router: Router,

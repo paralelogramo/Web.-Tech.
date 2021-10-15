@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudenthomeComponent implements OnInit {
 
-  opened = false;
   
   constructor() { }
 

@@ -9,8 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SigninComponent } from './components/signin/signin.component';
-import { StudenthomeComponent } from './studenthome/studenthome.component';
 import { RegisterComponent } from './components/register/register.component';
+import { StudenthomeComponent } from './components/student/components/studenthome/studenthome.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'signin' },
