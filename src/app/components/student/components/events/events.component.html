@@ -1,1 +1,39 @@
-<p>events works!</p>
+<mat-sidenav-container>
+    <mat-sidenav opened mode="side">
+
+        <mat-list>
+            <mat-list-item>
+                <img class="avatar" src="https://i.ibb.co/8BFzxDR/user-1.png">
+            </mat-list-item>
+            <mat-list-item>
+                <p>Aqui van los Nombres</p>
+            </mat-list-item>
+            <mat-list-item>
+                <p>Aqui van los Apellidos</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <button mat-raised-button (click)="goCourses()">Mis Cursos</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-raised-button (click)="goEvents()">Mis Eventos</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-raised-button>Ayuda</button>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <button mat-raised-button (click)="goEditProfile()">Editar Perfil</button>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <button mat-raised-button color="primary" (click)="closeSession()">Cerrar Sesión</button>
+            </mat-list-item>
+        </mat-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <p>Aqui van los componentes de Eventos</p>
+    </mat-sidenav-content>
+</mat-sidenav-container>

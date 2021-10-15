@@ -11,12 +11,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { SigninComponent } from './components/signin/signin.component';
 import { RegisterComponent } from './components/register/register.component';
 import { StudenthomeComponent } from './components/student/components/studenthome/studenthome.component';
+import { EventsComponent } from './components/student/components/events/events.component';
+import { CoursesComponent } from './components/student/components/courses/courses.component';
+import { EditprofileComponent } from './components/student/components/editprofile/editprofile.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'signin' },
   { path: 'signin', component: SigninComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'student', component: StudenthomeComponent },
+  { path: 'student/home', component: StudenthomeComponent },
+  { path: 'student/myevents', component: EventsComponent  },
+  { path: 'student/mycourses', component: CoursesComponent },
+  { path: 'student/editprofile', component: EditprofileComponent },
 ];
 
 @NgModule({
@@ -25,6 +31,9 @@ const routes: Routes = [
     SigninComponent,
     RegisterComponent,
     StudenthomeComponent,
+    EventsComponent,
+    CoursesComponent,
+    EditprofileComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +45,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  exports: [RouterModule],
+  exports: [
+    RouterModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

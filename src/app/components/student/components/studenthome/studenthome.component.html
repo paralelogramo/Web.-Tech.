@@ -13,27 +13,27 @@
             </mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item>
-                <button mat-raised-button>Mis Cursos</button>
+                <button mat-raised-button (click)="goCourses()">Mis Cursos</button>
             </mat-list-item>
             <mat-list-item>
-                <button mat-raised-button>Mis Eventos</button>
+                <button mat-raised-button (click)="goEvents()">Mis Eventos</button>
             </mat-list-item>
             <mat-list-item>
                 <button mat-raised-button>Ayuda</button>
             </mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item>
-                <button mat-raised-button>Editar Perfil</button>
+                <button mat-raised-button (click)="goEditProfile()">Editar Perfil</button>
             </mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item>
-                <button mat-raised-button color="primary">Cerrar Sesión</button>
+                <button mat-raised-button color="primary" (click)="closeSession()">Cerrar Sesión</button>
             </mat-list-item>
         </mat-list>
 
     </mat-sidenav>
 
     <mat-sidenav-content>
-
+        <p>Aquí van el resto de los componentes del Home</p>
     </mat-sidenav-content>
 </mat-sidenav-container>

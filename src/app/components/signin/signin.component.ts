@@ -17,7 +17,8 @@ interface Type {
 })
 export class SigninComponent{
 
-  userModel: User = new User(undefined,"",undefined,"","","",undefined,undefined);
+  userModel: User = new User("","",undefined,"","","",undefined,undefined);
+  response: User = new User("","",undefined,"","","",undefined,undefined);
 
   types: Type[] = [
     {value: 'estudiante', viewValue: 'Estudiante'},
@@ -33,12 +34,12 @@ export class SigninComponent{
     ) { }
   
   login(): any{    
-    this.crudService.getUser(this.userModel).subscribe((user: User) =>{
-      if (user.email === this.userModel.email){
-        this.snackBar.open('¡Bienvenid@ '+user.nick+'!', undefined, {
+    this.crudService.getUser(this.userModel).subscribe(data =>{
+      if (data.email === this.userModel.email){
+        this.snackBar.open('¡Bienvenid@ '+data.nick+'!', undefined, {
           duration: 2000,        
         })
-        this.router.navigateByUrl('/student');
+        this.router.navigateByUrl('/student/home');
       }
       else{
         this.snackBar.open('¡Revisa el correo o la contraseña!', undefined, {
@@ -46,10 +47,6 @@ export class SigninComponent{
         })
       }
     });
-
-    // this.crudService.getUser(this.userModel).subscribe((user: User )=> {
-    //   
-    // });
   }
 
   goRegister(): any{
