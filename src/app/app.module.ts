@@ -41,6 +41,14 @@ const routes: Routes = [
   { path: 'admin/dependencies', component: AdmindependenciesComponent },
   { path: 'admin/events', component: AdmineventsComponent },
   { path: 'admin/modules', component: AdminmodulesComponent },
+  { path: 'operative/home', component: OperativehomeComponent },
+  { path: 'operative/events', component: OperiveeventsComponent },
+  { path: 'operative/registers', component: OperiveregistersComponent },
+  { path: 'operative/help', component: OperivehelpComponent },
+  { path: 'professor/home', component: ProfessorhomeComponent },
+  { path: 'professor/events', component: ProfessoreventsComponent },
+  { path: 'professor/courses', component: ProfessorcoursesComponent },
+  { path: 'professor/help', component: ProfessorhelpComponent },
 ];
 
 @NgModule({
