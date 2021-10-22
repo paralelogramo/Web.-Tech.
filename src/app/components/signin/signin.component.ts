@@ -17,8 +17,8 @@ interface Type {
 })
 export class SigninComponent{
 
-  userModel: User = new User("","",undefined,"","","",undefined,undefined);
-  response: User = new User("","",undefined,"","","",undefined,undefined);
+  userModel: User = new User("","",undefined,"","","",undefined,undefined, undefined, undefined);
+  response: User = new User("","",undefined,"","","",undefined,undefined, undefined, undefined);
 
   types: Type[] = [
     {value: 'estudiante', viewValue: 'Estudiante'},
@@ -40,7 +40,25 @@ export class SigninComponent{
         this.snackBar.open('¡Bienvenid@ '+data.nick+'!', undefined, {
           duration: 2000,        
         })
-        this.router.navigateByUrl('/student/home');
+        
+        switch (data.type) {
+          case 0: {
+            this.router.navigateByUrl('/admin/home');
+            break;
+          }
+          case 1: {
+            this.router.navigateByUrl('');
+            break;
+          }
+          case 2: {
+            this.router.navigateByUrl('');
+            break;
+          }
+          case 3: {
+            this.router.navigateByUrl('');
+            break;
+          }
+        }
       }
       else{
         this.snackBar.open('¡Revisa el correo o la contraseña!', undefined, {
