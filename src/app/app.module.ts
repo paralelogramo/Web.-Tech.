@@ -19,6 +19,9 @@ import { AdminmodulesComponent } from './components/admin/adminmodules/adminmodu
 import { AdmineventsComponent } from './components/admin/adminevents/adminevents.component';
 import { AdminaccountsComponent } from './components/admin/adminaccounts/adminaccounts.component';
 import { AdmindependenciesComponent } from './components/admin/admindependencies/admindependencies.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'signin' },
@@ -49,7 +52,7 @@ const routes: Routes = [
     AdmineventsComponent,
     AdminaccountsComponent,
     AdmindependenciesComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -59,12 +62,17 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSlideToggleModule
   ],
   exports: [
     RouterModule,
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

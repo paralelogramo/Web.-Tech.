@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adminhome.component.css']
 })
 export class AdminhomeComponent implements OnInit {
-
+  selected: Date | undefined;
   constructor() { }
 
   ngOnInit(): void {
