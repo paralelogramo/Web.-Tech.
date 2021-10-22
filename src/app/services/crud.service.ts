@@ -25,6 +25,8 @@ export class CrudService {
     const httpOptions = {
       headers: headers
     };
-    return this.clienteHttp.post<User>(`${this.baseUrl}/getUser.php`,user);
+
+    let res = this.clienteHttp.post<User>(`${this.baseUrl}/getUser.php`,user);
+    return res;
   }
 }
