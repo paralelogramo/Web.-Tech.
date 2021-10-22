@@ -15,7 +15,6 @@ import { EventsComponent } from './components/student/components/events/events.c
 import { CoursesComponent } from './components/student/components/courses/courses.component';
 import { EditprofileComponent } from './components/student/components/editprofile/editprofile.component';
 import { AdminhomeComponent } from './components/admin/adminhome/adminhome.component';
-import { AdminmodulesComponent } from './components/admin/adminmodules/adminmodules.component';
 import { AdmineventsComponent } from './components/admin/adminevents/adminevents.component';
 import { AdminaccountsComponent } from './components/admin/adminaccounts/adminaccounts.component';
 import { AdmindependenciesComponent } from './components/admin/admindependencies/admindependencies.component';
@@ -40,7 +39,6 @@ const routes: Routes = [
   { path: 'admin/accounts', component: AdminaccountsComponent },
   { path: 'admin/dependencies', component: AdmindependenciesComponent },
   { path: 'admin/events', component: AdmineventsComponent },
-  { path: 'admin/modules', component: AdminmodulesComponent },
   { path: 'operative/home', component: OperativehomeComponent },
   { path: 'operative/events', component: OperiveeventsComponent },
   { path: 'operative/registers', component: OperiveregistersComponent },
@@ -61,7 +59,6 @@ const routes: Routes = [
     CoursesComponent,
     EditprofileComponent,
     AdminhomeComponent,
-    AdminmodulesComponent,
     AdmineventsComponent,
     AdminaccountsComponent,
     AdmindependenciesComponent,
