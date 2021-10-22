@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class RegisterComponent implements OnInit {
 
-  userModel: User = new User("","",undefined,"","","",undefined,undefined);
+  userModel: User = new User("","",undefined,"","","",undefined,undefined, 3, 0);
 
   constructor(
     private router: Router,

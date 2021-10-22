@@ -8,5 +8,7 @@ export class User{
         public nick?: String,
         public avatar?: Blob,
         public refAdmin?: number,
+        public type?: number,
+        public isAproved?: number,
     ){}
 }
