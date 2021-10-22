@@ -35,6 +35,7 @@ export class SigninComponent{
   
   login(): any{    
     this.crudService.getUser(this.userModel).subscribe(data =>{
+      console.log(data);
       if (data.email === this.userModel.email){
         this.snackBar.open('¡Bienvenid@ '+data.nick+'!', undefined, {
           duration: 2000,        
