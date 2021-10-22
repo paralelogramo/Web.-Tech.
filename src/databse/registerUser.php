@@ -7,8 +7,8 @@ if (!$jsonUser) {
     exit("No hay datos");
 }
 $bd = include_once "bd.php";
-$sentencia = $bd->prepare("insert into usuario(nombre, apellido, nick, email, pass) values (?,?,?,?,?);");
-$resultado = $sentencia->execute([$jsonUser->mainName, $jsonUser->surName, $jsonUser->nick, $jsonUser->email, $jsonUser->pass]);
+$sentencia = $bd->prepare("insert into usuario(mainName, surName, nick, email, pass, type, isAproved) values (?,?,?,?,?,?,?);");
+$resultado = $sentencia->execute([$jsonUser->mainName, $jsonUser->surName, $jsonUser->nick, $jsonUser->email, $jsonUser->pass, $jsonUser->type, $jsonUser->isAproved]);
 echo json_encode([    
     "resultado" => $resultado,
 ]);

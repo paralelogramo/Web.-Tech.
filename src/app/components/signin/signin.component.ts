@@ -17,8 +17,8 @@ interface Type {
 })
 export class SigninComponent{
 
-  userModel: User = new User();
-  response: User = new User();
+  userModel: User = new User(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined);
+  //response: User = new User(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined);
 
   constructor(
     private router:Router,
@@ -28,7 +28,6 @@ export class SigninComponent{
   
   login(): any{
     this.crudService.getUser(this.userModel).subscribe(data =>{
-      console.log(data.type);
       if (data.email === this.userModel.email){
         this.snackBar.open('¡Bienvenid@ '+data.nick+'!', undefined, {
           duration: 2000,        
