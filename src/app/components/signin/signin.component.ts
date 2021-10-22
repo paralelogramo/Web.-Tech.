@@ -17,15 +17,8 @@ interface Type {
 })
 export class SigninComponent{
 
-  userModel: User = new User("","",undefined,"","","",undefined,undefined, undefined, undefined);
-  response: User = new User("","",undefined,"","","",undefined,undefined, undefined, undefined);
-
-  types: Type[] = [
-    {value: 'estudiante', viewValue: 'Estudiante'},
-    {value: 'profesor', viewValue: 'Profesor'},
-    {value: 'operativo', viewValue: 'Operativo'},
-    {value: 'admin', viewValue: 'Administrador'}
-  ];
+  userModel: User = new User();
+  response: User = new User();
 
   constructor(
     private router:Router,
@@ -33,31 +26,25 @@ export class SigninComponent{
     private snackBar: MatSnackBar
     ) { }
   
-  login(): any{    
+  login(): any{
     this.crudService.getUser(this.userModel).subscribe(data =>{
-      console.log(data);
+      console.log(data.type);
       if (data.email === this.userModel.email){
         this.snackBar.open('¡Bienvenid@ '+data.nick+'!', undefined, {
           duration: 2000,        
         })
         
-        switch (data.type) {
-          case 0: {
-            this.router.navigateByUrl('/admin/home');
-            break;
-          }
-          case 1: {
-            this.router.navigateByUrl('');
-            break;
-          }
-          case 2: {
-            this.router.navigateByUrl('');
-            break;
-          }
-          case 3: {
-            this.router.navigateByUrl('');
-            break;
-          }
+        if (data.type == 0){
+          this.router.navigateByUrl('/admin/home');
+        }
+        else if (data.type == 1){
+          this.router.navigateByUrl('/professor/home');
+        }
+        else if (data.type == 2){
+          this.router.navigateByUrl('/operative/home');
+        }
+        else if (data.type == 3){
+          this.router.navigateByUrl('/student/home');
         }
       }
       else{
