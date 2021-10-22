@@ -19,6 +19,14 @@ import { AdminmodulesComponent } from './components/admin/adminmodules/adminmodu
 import { AdmineventsComponent } from './components/admin/adminevents/adminevents.component';
 import { AdminaccountsComponent } from './components/admin/adminaccounts/adminaccounts.component';
 import { AdmindependenciesComponent } from './components/admin/admindependencies/admindependencies.component';
+import { ProfessorhomeComponent } from './components/professor/professorhome/professorhome.component';
+import { ProfessorcoursesComponent } from './components/professor/professorcourses/professorcourses.component';
+import { ProfessoreventsComponent } from './components/professor/professorevents/professorevents.component';
+import { ProfessorhelpComponent } from './components/professor/professorhelp/professorhelp.component';
+import { OperativehomeComponent } from './components/operative/operativehome/operativehome.component';
+import { OperiveeventsComponent } from './components/operative/operiveevents/operiveevents.component';
+import { OperiveregistersComponent } from './components/operative/operiveregisters/operiveregisters.component';
+import { OperivehelpComponent } from './components/operative/operivehelp/operivehelp.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'signin' },
@@ -49,6 +57,14 @@ const routes: Routes = [
     AdmineventsComponent,
     AdminaccountsComponent,
     AdmindependenciesComponent,
+    ProfessorhomeComponent,
+    ProfessorcoursesComponent,
+    ProfessoreventsComponent,
+    ProfessorhelpComponent,
+    OperativehomeComponent,
+    OperiveeventsComponent,
+    OperiveregistersComponent,
+    OperivehelpComponent,
     
   ],
   imports: [
