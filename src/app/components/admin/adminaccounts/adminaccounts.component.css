@@ -1,7 +1,25 @@
-table {
-  width: 30%;
+mat-sidenav-container {
+  height: 100%;
+}
+mat-sidenav, mat-sidenav-content{
+  padding: 16px;
 }
 
-th.mat-sort-header-sorted {
-  color: black;
+mat-sidenav {
+  background-color: rgb(67, 67, 235);
+  width: 250px;
+}
+
+demo-inline-calendar-card {
+  width: 300px;
+}
+mat-grid-tile {
+  background: lightblue;
+}
+p {
+  text-indent: 60px;
+}
+.mat-stroked-button{
+  margin-left: 85%;
+  background-color: white;
 }

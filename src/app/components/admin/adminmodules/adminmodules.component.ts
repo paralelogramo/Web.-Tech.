@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-admindependencies',
-  templateUrl: './admindependencies.component.html',
-  styleUrls: ['./admindependencies.component.css']
+  selector: 'app-adminmodules',
+  templateUrl: './adminmodules.component.html',
+  styleUrls: ['./adminmodules.component.css']
 })
-export class AdmindependenciesComponent implements OnInit {
+export class AdminmodulesComponent implements OnInit {
   router: any;
 
   constructor() { }
@@ -15,10 +15,6 @@ export class AdmindependenciesComponent implements OnInit {
 
   goCounts(): any{
     this.router.navigateByUrl('/admin/accounts');
-  }
-
-  goModules(): any{
-    this.router.navigateByUrl('/admin/modules');
   }
 
   goEvents(): any{
@@ -34,5 +30,4 @@ export class AdmindependenciesComponent implements OnInit {
     //Aqui falta borrar los token
     this.router.navigateByUrl('/signin');
   }
-  
 }
