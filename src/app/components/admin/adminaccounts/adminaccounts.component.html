@@ -7,90 +7,95 @@
             <img class="avatar" src="https://i.ibb.co/8BFzxDR/user-1.png">
           </div>
         </div>
-
-          <mat-list-item>
-              <p>Aqui van los Nombres</p>
-          </mat-list-item>
-          <mat-list-item>
-              <p>Aqui van los Apellidos</p>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>
-              <button mat-raised-button>Cuentas</button>
-          </mat-list-item>
-          <mat-list-item>
-              <button mat-raised-button>Modulos</button>
-          </mat-list-item>
-          <mat-list-item>
-              <button mat-raised-button>Eventos</button>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>
-              <button mat-raised-button>Editar Perfil</button>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
-            <div fxLayout="column" flex="50">
-              <mat-list-item>
-                  <button mat-raised-button color="primary">Cerrar Sesión</button>
-              </mat-list-item>
-            </div>
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <p>Aqui van los Nombres</p>
+            </mat-list-item>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <p>Aqui van los Apellidos</p>
+            </mat-list-item>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <button mat-raised-button color="primary">Cuentas</button>
+            </mat-list-item>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <button mat-raised-button (click) = "goModules()">Modulos</button>
+            </mat-list-item>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <button mat-raised-button (click) = "goEvents()">Eventos</button>
+            </mat-list-item>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <button mat-raised-button (click) = "goDependencies()">Dependencias</button>
+            </mat-list-item>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <button mat-raised-button (click) = "goEditProfile()">Editar Perfil</button>
+            </mat-list-item>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+              <button mat-raised-button color="primary" (click)="closeSession()">Cerrar Sesión</button>
+            </mat-list-item>
+          </div>
         </div>
       </mat-list>
-
   </mat-sidenav>
 
+  PARTE DERECHA
   <mat-sidenav-content>
-      <p>Aquí van el resto de los componentes del Home</p>
-      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-      <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
-          class="mat-elevation-z8">
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
-            ID
-          </th>
-          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-        </ng-container>
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
-            Nombres
-          </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-        <!-- LastName Column -->
-        <ng-container matColumnDef="lastName">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by lastName">
-            Apellidos
-          </th>
-          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
-        </ng-container>
-        <!-- Nick Column -->
-        <ng-container matColumnDef="nick">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by nick">
-            Apodo
-          </th>
-          <td mat-cell *matCellDef="let element"> {{element.nick}} </td>
-        </ng-container>
-        <!-- Email Column -->
-        <ng-container matColumnDef="email">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by email">
-            e-mail
-          </th>
-          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-        </ng-container>
-        <!-- Email Column -->
-        <ng-container matColumnDef="isActive">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by isActive">
-            Activate
-          </th>
-          <td mat-cell *matCellDef="let element"> <mat-slide-toggle [checked]=element.isActive></mat-slide-toggle> </td>
-        </ng-container>
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-      <div fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="gappx">
-      </div>>
+
+    <mat-grid-list cols="1" rowHeight="1:0.04">
+      <mat-grid-tile>
+        <button mat-stroked-button>Añadir cuenta</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <p></p>
+
+    <mat-grid-list cols="1" rowHeight="1:0.45" row>
+      <mat-grid-tile> Acá debería ir la tabla
+        <!-- <table mat-table [dataSource]="myDataArray">
+          ...
+        </table> -->
+      </mat-grid-tile>
+    </mat-grid-list>
+    
+    <p></p>
+
+    <mat-grid-list cols="1" rowHeight="1:0.04">
+      <mat-grid-tile>
+        <mat-paginator></mat-paginator>
+      </mat-grid-tile>
+    </mat-grid-list>
+     
   </mat-sidenav-content>
+  
 </mat-sidenav-container>

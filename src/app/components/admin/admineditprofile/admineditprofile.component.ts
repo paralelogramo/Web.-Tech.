@@ -1,32 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-admindependencies',
-  templateUrl: './admindependencies.component.html',
-  styleUrls: ['./admindependencies.component.css']
+  selector: 'app-admineditprofile',
+  templateUrl: './admineditprofile.component.html',
+  styleUrls: ['./admineditprofile.component.css']
 })
-export class AdmindependenciesComponent implements OnInit {
+export class AdmineditprofileComponent implements OnInit {
   router: any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
   goCounts(): any{
     this.router.navigateByUrl('/admin/accounts');
-  }
-
-  goModules(): any{
-    this.router.navigateByUrl('/admin/modules');
   }
 
   goEvents(): any{
     this.router.navigateByUrl('/admin/events');
   }
 
-  goEditProfile(): any{
-    this.router.navigateByUrl('/admin/editprofile');
+  goDependencies(): any{
+    this.router.navigateByUrl('/admin/dependencies');
   }
 
   closeSession(): any{
@@ -34,5 +29,4 @@ export class AdmindependenciesComponent implements OnInit {
     //Aqui falta borrar los token
     this.router.navigateByUrl('/signin');
   }
-  
 }

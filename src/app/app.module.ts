@@ -19,6 +19,7 @@ import { AdminhomeComponent } from './components/admin/adminhome/adminhome.compo
 import { AdmineventsComponent } from './components/admin/adminevents/adminevents.component';
 import { AdminaccountsComponent } from './components/admin/adminaccounts/adminaccounts.component';
 import { AdmindependenciesComponent } from './components/admin/admindependencies/admindependencies.component';
+import { AdminmodulesComponent } from './components/admin/adminmodules/adminmodules.component';
 import { ProfessorhomeComponent } from './components/professor/professorhome/professorhome.component';
 import { ProfessorcoursesComponent } from './components/professor/professorcourses/professorcourses.component';
 import { ProfessoreventsComponent } from './components/professor/professorevents/professorevents.component';
@@ -27,6 +28,7 @@ import { OperativehomeComponent } from './components/operative/operativehome/ope
 import { OperiveeventsComponent } from './components/operative/operiveevents/operiveevents.component';
 import { OperiveregistersComponent } from './components/operative/operiveregisters/operiveregisters.component';
 import { OperivehelpComponent } from './components/operative/operivehelp/operivehelp.component';
+import { AdmineditprofileComponent } from './components/admin/admineditprofile/admineditprofile.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'signin' },
@@ -40,6 +42,8 @@ const routes: Routes = [
   { path: 'admin/accounts', component: AdminaccountsComponent },
   { path: 'admin/dependencies', component: AdmindependenciesComponent },
   { path: 'admin/events', component: AdmineventsComponent },
+  { path: 'admin/modules', component: AdminmodulesComponent },
+  { path: 'admin/editprofile', component: AdmineditprofileComponent },
   { path: 'operative/home', component: OperativehomeComponent },
   { path: 'operative/events', component: OperiveeventsComponent },
   { path: 'operative/registers', component: OperiveregistersComponent },
@@ -63,6 +67,8 @@ const routes: Routes = [
     AdmineventsComponent,
     AdminaccountsComponent,
     AdmindependenciesComponent,
+    AdminmodulesComponent,
+    AdmineditprofileComponent,
     ProfessorhomeComponent,
     ProfessorcoursesComponent,
     ProfessoreventsComponent,

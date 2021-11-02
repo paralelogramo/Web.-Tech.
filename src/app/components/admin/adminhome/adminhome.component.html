@@ -25,21 +25,28 @@
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button>Cuentas</button>
+                <button mat-raised-button (click) = "goCounts()">Cuentas</button>
             </mat-list-item>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button>Modulos</button>
+                <button mat-raised-button (click) = "goModules()">Modulos</button>
             </mat-list-item>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button>Eventos</button>
+                <button mat-raised-button (click) = "goEvents()">Eventos</button>
+            </mat-list-item>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <button mat-raised-button (click) = "goDependencies()">Dependencias</button>
             </mat-list-item>
           </div>
         </div>
@@ -47,7 +54,7 @@
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button>Editar Perfil</button>
+                <button mat-raised-button (click) = "goEditProfile()">Editar Perfil</button>
             </mat-list-item>
           </div>
         </div>
@@ -55,22 +62,18 @@
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-              <button mat-raised-button color="primary">Cerrar Sesión</button>
+              <button mat-raised-button color="primary" (click)="closeSession()">Cerrar Sesión</button>
             </mat-list-item>
           </div>
         </div>
       </mat-list>
   </mat-sidenav>
 
+  PARTE DERECHA
   <mat-sidenav-content>
-      <p>Aquí van el resto de los componentes del Home</p>
-      <div fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="gappx" >
-        <mat-card class="demo-inline-calendar-card">
-          <mat-calendar (selectedChange)="selected = $event"></mat-calendar>
-        </mat-card>
-      </div>>
 
-      <p>Selected date: {{selected}}</p>
-
+    Acá va todo el contenido
+     
   </mat-sidenav-content>
+
 </mat-sidenav-container>

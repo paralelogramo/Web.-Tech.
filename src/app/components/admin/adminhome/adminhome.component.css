@@ -13,3 +13,14 @@ mat-sidenav {
 demo-inline-calendar-card {
   width: 300px;
 }
+mat-grid-tile {
+  background: lightblue;
+}
+p {
+  text-indent: 60px;
+}
+.mat-stroked-button{
+  margin-left: 85%;
+  background-color: white;
+}
+
