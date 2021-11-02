@@ -26,7 +26,6 @@ export class CrudService {
       headers: headers
     };
 
-    let res = this.clienteHttp.post<User>(`${this.baseUrl}/getUser.php`,user);
-    return res;
+    return this.clienteHttp.post<User>(`${this.baseUrl}/getUser.php`,user);;
   }
 }

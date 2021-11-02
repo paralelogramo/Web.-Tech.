@@ -32,21 +32,21 @@
           <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
             <div fxLayout="column" flex="50">
               <mat-list-item>
-                  <button mat-raised-button (click) = "goModules()">Modulos</button>
+                  <button mat-raised-button color="primary">Modulos</button>
               </mat-list-item>
             </div>
           </div>
           <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
             <div fxLayout="column" flex="50">
               <mat-list-item>
-                  <button mat-raised-button (click) = "goEvents()">Eventos</button>
+                  <button mat-raised-button>Eventos</button>
               </mat-list-item>
             </div>
           </div>
           <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
             <div fxLayout="column" flex="50">
               <mat-list-item>
-                  <button mat-raised-button color="primary">Dependencias</button>
+                  <button mat-raised-button>Dependencias</button>
               </mat-list-item>
             </div>
           </div>
@@ -68,34 +68,31 @@
           </div>
         </mat-list>
     </mat-sidenav>
+
+<mat-sidenav-content>
   
-    PARTE DERECHA
-    <mat-sidenav-content>
-  
-      <mat-grid-list cols="1" rowHeight="1:0.04">
-        <mat-grid-tile>
-          <button mat-stroked-button>Añadir dependencia</button>
-        </mat-grid-tile>
-      </mat-grid-list>
-  
-      <p></p>
-  
-      <mat-grid-list cols="1" rowHeight="1:0.45" row>
-        <mat-grid-tile> Acá debería ir la tabla
-          <!-- <table mat-table [dataSource]="myDataArray">
-            ...
-          </table> -->
-        </mat-grid-tile>
-      </mat-grid-list>
-      
-      <p></p>
-  
-      <mat-grid-list cols="1" rowHeight="1:0.04">
-        <mat-grid-tile>
-          <mat-paginator></mat-paginator>
-        </mat-grid-tile>
-      </mat-grid-list>
-       
-    </mat-sidenav-content>
+    <mat-grid-list cols="1" rowHeight="1:0.04">
+      <mat-grid-tile>
+        <button mat-stroked-button>Añadir modulo</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <p></p>
+
+    <mat-grid-list cols="1" rowHeight="1:0.45" row>
+      <mat-grid-tile> Acá debería ir la tabla
+        <!-- <table mat-table [dataSource]="myDataArray">
+          ...
+        </table> -->
+      </mat-grid-tile>
+    </mat-grid-list>
     
-  </mat-sidenav-container>
+    <p></p>
+
+    <mat-grid-list cols="1" rowHeight="1:0.04">
+      <mat-grid-tile>
+        <mat-paginator></mat-paginator>
+      </mat-grid-tile>
+    </mat-grid-list>
+     
+  </mat-sidenav-content>
