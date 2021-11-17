@@ -1,0 +1,28 @@
+<form class="form" (ngSubmit)="registerDependence()">
+    <mat-list>
+        <mat-list-item class="listItem">
+            <mat-form-field class="formField">
+                <input class="inputField" matInput placeholder="Nombre" [(ngModel)]="dependenceModel.name" name="name">
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item class="listItem">
+            <mat-form-field class="formField">
+                <input class="inputField" matInput placeholder="Capacidad" [(ngModel)]="dependenceModel.capacity" name="capacity">
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item class="listItem">
+            <mat-form-field class="formField">
+                <input class="inputField" matInput placeholder="Ubicacion" [(ngModel)]="dependenceModel.location" name="location">
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item class="listItem">
+
+        </mat-list-item>
+    </mat-list>
+
+    <button mat-stroked-button color="accent" class="btn-block" type="submit">Registrar</button>
+  </form>
+  <button mat-button (click)="closeDialog()">Close</button>

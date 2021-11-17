@@ -1,0 +1,50 @@
+<form class="form" (ngSubmit)="registerUser()">
+    <mat-list>
+        <mat-list-item class="listItem">
+            <mat-form-field class="formField">
+                <input class="inputField" matInput placeholder="Nombres" [(ngModel)]="userModel.mainName" name="mainName">
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item class="listItem">
+            <mat-form-field class="formField">
+                <input class="inputField" matInput placeholder="Apellidos" [(ngModel)]="userModel.surName" name="surName">
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item class="listItem">
+            <mat-form-field class="formField">
+                <input class="inputField" matInput placeholder="Apodo" [(ngModel)]="userModel.nick" name="nick">
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item class="listItem">
+            <mat-form-field class="formField">
+                <input class="inputField" matInput placeholder="Email" [(ngModel)]="userModel.email" name="email">
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item class="listItem">
+            <mat-form-field class="formField">
+                <input class="inputField" matInput placeholder="Contraseña" [(ngModel)]="userModel.pass" name="pass">
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item class="listItem">
+            <mat-form-field class="formField">
+                <mat-label>Tipo de Cuenta</mat-label>
+                <mat-select (selectionChange)="selectedValue($event)">
+                    <mat-option *ngFor="let types of accountTypes" [value]="types">
+                        {{types}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-list-item>
+        <mat-list-item class="listItem">
+
+        </mat-list-item>
+    </mat-list>
+
+    <button mat-stroked-button color="accent" class="btn-block" type="submit">Registrarse</button>
+  </form>
+  <button mat-button (click)="closeDialog()">Close</button>

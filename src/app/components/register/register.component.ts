@@ -22,12 +22,20 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  registerUser(): any{
-    const res = this.crudService.register(this.userModel).subscribe(() => {      
-      this.snackBar.open('Usuario Registrado con Éxito!', undefined, {
-        duration: 2000,        
-      })
-      this.router.navigateByUrl('/signin');
+  registerUser(): void{
+    this.crudService.register(this.userModel).subscribe(resp => {      
+      console.log(resp)
+      if(resp.resultado == false){
+        this.snackBar.open('Ups! Revisa las casillas!', undefined, {
+          duration: 2000,        
+        })
+      }
+      else{
+        this.snackBar.open('Usuario Registrado con Éxito!', undefined, {
+          duration: 2000,        
+        })
+        this.router.navigateByUrl('/signin');
+      }
     });
   }
   goRegister(): any{
