@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminhomeComponent } from './adminhome.component';
+import { DialogEditComponent } from './dialog-edit.component';
 
-describe('AdminhomeComponent', () => {
-  let component: AdminhomeComponent;
-  let fixture: ComponentFixture<AdminhomeComponent>;
+describe('DialogEditComponent', () => {
+  let component: DialogEditComponent;
+  let fixture: ComponentFixture<DialogEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminhomeComponent ]
+      declarations: [ DialogEditComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminhomeComponent);
+    fixture = TestBed.createComponent(DialogEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

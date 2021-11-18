@@ -10,14 +10,14 @@
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <p>Aqui van los Nombres</p>
+              <p>{{userSession.mainName}}</p>
             </mat-list-item>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <p>Aqui van los Apellidos</p>
+              <p>{{userSession.surName}}</p>
             </mat-list-item>
           </div>
         </div>
@@ -25,7 +25,7 @@
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button color="primary">Cuentas</button>
+                <button mat-raised-button color="warn">Cuentas</button>
             </mat-list-item>
           </div>
         </div>
@@ -69,31 +69,115 @@
       </mat-list>
   </mat-sidenav>
 
-  PARTE DERECHA
-  <mat-sidenav-content>
+  <!-- PARTE DERECHA -->
+  <mat-sidenav-content class="sideNavContent">
 
-    <mat-grid-list cols="1" rowHeight="1:0.04">
-      <mat-grid-tile>
-        <button mat-stroked-button>Añadir cuenta</button>
+    <mat-grid-list cols="3" rowHeight="4em" class="gridList">
+
+      <!-- Header Tile -->
+      <mat-grid-tile class="header" [colspan]="3" [rowspan]="1">
+        <button mat-stroked-button (click)="openDialog()">Añadir cuenta</button>
       </mat-grid-tile>
-    </mat-grid-list>
 
-    <p></p>
+      <!-- Middle Tile -->
+      <mat-grid-tile class="middle" [colspan]="2" [rowspan]="13">
+        <div class="internalDiv">
+          <mat-grid-list cols="1" rowHeight="4em">
+            <mat-grid-tile [rowspan]="10" class="tableTile">
+              <table mat-table [dataSource]="users">
 
-    <mat-grid-list cols="1" rowHeight="1:0.45" row>
-      <mat-grid-tile> Acá debería ir la tabla
-        <!-- <table mat-table [dataSource]="myDataArray">
-          ...
-        </table> -->
+                <!-- Weight Column -->
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> ID </th>
+                  <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+                </ng-container>
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="mainName">
+                  <th mat-header-cell *matHeaderCellDef> Nombres </th>
+                  <td mat-cell *matCellDef="let user"> {{user.mainName}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="surName">
+                  <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+                  <td mat-cell *matCellDef="let user"> {{user.surName}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="email">
+                  <th mat-header-cell *matHeaderCellDef> Correo </th>
+                  <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="showUser(row)"></tr>
+              </table>
+            </mat-grid-tile>
+            <mat-grid-tile [rowspan]="3">
+              <mat-paginator
+                  [length]="allUsers.length"
+                  [pageSize]="page_size"
+                  [pageSizeOptions]="page_size_options"
+                  (page)="onPageChange($event)"
+                  aria-label="Select page"
+              ></mat-paginator>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+        
       </mat-grid-tile>
-    </mat-grid-list>
-    
-    <p></p>
 
-    <mat-grid-list cols="1" rowHeight="1:0.04">
-      <mat-grid-tile>
-        <mat-paginator></mat-paginator>
+      <mat-grid-tile [colspan]="1" [rowspan]="13" class="middle">
+        <mat-list class="disabledFormContainer" *ngIf="userReady == true">
+          <mat-list-item class="imgPrev">
+              <img class="avatarPrev" src="https://i.ibb.co/8BFzxDR/user-1.png">
+          </mat-list-item>
+          <mat-list-item class="disabledFormField">
+            <mat-form-field>
+              <mat-label>Nombres</mat-label>
+              <input class="matInputField" matInput [readonly]="true" value = {{userToShow.mainName}}>
+            </mat-form-field>
+          </mat-list-item>
+          <mat-list-item class="disabledFormField">
+            <mat-form-field>
+              <mat-label>Apellidos</mat-label>
+              <input matInput [readonly]="true" value = {{userToShow.surName}}>
+            </mat-form-field>
+          </mat-list-item>
+          <mat-list-item class="disabledFormField">
+            <mat-form-field>
+              <mat-label>Nick</mat-label>
+              <input matInput [readonly]="true" value = {{userToShow.nick}}>
+            </mat-form-field>
+          </mat-list-item>
+          <mat-list-item class="disabledFormField">
+            <mat-form-field>
+              <mat-label>Correo</mat-label>
+              <input matInput [readonly]="true" value = {{userToShow.email}}>
+            </mat-form-field>
+          </mat-list-item>
+          <mat-list-item class="disabledFormField">
+            <mat-form-field>
+              <mat-label>Tipo de Cuenta</mat-label>
+              <input matInput [readonly]="true" value = {{typeAccount}}>
+            </mat-form-field>
+          </mat-list-item>
+          <!-- <mat-list-item class="disabledFormField" *ngIf="isStudent">
+              <mat-label>Autorizado</mat-label>
+              <mat-slide-toggle
+                  class="example-margin"
+                  [checked]="isAproved">
+              </mat-slide-toggle>
+          </mat-list-item> -->
+        </mat-list>
       </mat-grid-tile>
+
+      <!-- Footer Tile -->
+      <mat-grid-tile class="footer" [colspan]="3" [rowspan]="1">
+        Un producto de RatonesOnTour S.A.
+      </mat-grid-tile>
+
     </mat-grid-list>
      
   </mat-sidenav-content>

@@ -1,25 +1,104 @@
 mat-sidenav-container {
-    height: 100%;
-  }
-  mat-sidenav, mat-sidenav-content{
-    padding: 16px;
-  }
-  
-  mat-sidenav {
-    background-color: rgb(67, 67, 235);
-    width: 250px;
-  }
-  
-  demo-inline-calendar-card {
-    width: 300px;
-  }
-  mat-grid-tile {
-    background: lightblue;
-  }
-  p {
-    text-indent: 60px;
-  }
-  .mat-stroked-button{
-    margin-left: 85%;
-    background-color: white;
-  }
+  height: 100%;
+}
+mat-sidenav, mat-sidenav-content{
+  padding: 16px;
+  height: 100%;
+  background-color: red;
+}
+
+mat-side-content{
+  height: 100%;
+}
+
+mat-sidenav {
+  height: 100%;
+  background-color: rgb(67, 67, 235);
+  width: auto;
+}
+
+mat-form-field{
+  width: 90%;
+}
+
+table{
+  width: 95%;
+}
+
+.gridList{
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.header{
+  height: 10%;
+  background-color: red;
+}
+
+.middle{
+  background-color: brown;
+  height: 30%;
+}
+
+.middleContainer{
+  background-color: violet;
+}
+
+.footer{
+  height: 10%;
+  background-color: green;
+}
+
+.avatar{
+  margin-bottom: 20px;
+}
+
+.mat-stroked-button{
+  margin-left: 85%;
+  background-color: white;
+}
+
+.imgPrev{
+  margin-top: 50px;
+  margin-bottom: 80px;
+  margin-left: 30%;
+  margin-right: 50%;
+}
+
+.avatarPrev{
+  height: 150px;
+  width: auto;
+}
+
+.disabledFormField{
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.disabledFormContainer{
+  margin-left: 15%;
+  margin-right: 5%;
+  width: 80%;
+}
+
+.matInputField{
+  width: 100%;
+}
+
+.sideNavContent{
+  background-color: yellow;
+  height: 100%;
+}
+
+.internalDiv{
+  width: 100%;
+}
+
+.tableTile{
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.selected {
+  background-color: red;
+}
