@@ -52,6 +52,6 @@ export class CrudService {
   }
 
   deleteDependence(id: number){
-    return this.clienteHttp.delete(`${this.baseUrl}/deleteDependece.php/?delete=`+id)
+    return this.clienteHttp.delete(`${this.baseUrl}/deleteDependence.php?delete=${id}`)
   }
 }

@@ -115,15 +115,18 @@ export class AdmindependenciesComponent implements OnInit {
   }
 
   openDialog2(): void{
-    const dialog = this.dialog2.open(DialogDeleteComponent)
-    dialog.afterClosed().subscribe(res => {
-      if(this.selectedRow == undefined){
-        // aun no selecciona ninguna fila
-      }
-      if(res == "yes"){
-        this.crudService.deleteDependence(this.selectedRow.id)
-        this.getAllDependences()
-      }
-    })
+    if(this.selectedRow == undefined){
+      // aun no selecciona ninguna fila
+    }
+    else{
+      const dialog = this.dialog2.open(DialogDeleteComponent)
+      dialog.afterClosed().subscribe(res => {
+        
+        if(res == "yes"){
+          this.crudService.deleteDependence(this.selectedRow.id)
+          this.getAllDependences()
+        }
+      })
+    }
   }
 }
