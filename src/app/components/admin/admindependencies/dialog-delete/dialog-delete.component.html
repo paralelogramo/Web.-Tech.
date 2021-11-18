@@ -1,0 +1,13 @@
+<div class="base">
+    <mat-grid-list cols="2" rowHeight="4em">
+        <mat-grid-tile [colspan]="2">
+            <p>¿Seguro que deseas eliminar "{{dependence}}"?</p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1">
+            <button mat-button mat-dialog-close="yes">Si</button>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1">
+            <button mat-button mat-dialog-close="no">No</button>
+        </mat-grid-tile>
+    </mat-grid-list>    
+</div>

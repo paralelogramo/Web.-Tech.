@@ -18,7 +18,6 @@ interface Type {
 export class SigninComponent{
 
   userModel: User = new User(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined);
-  //response: User = new User(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined);
 
   constructor(
     private router:Router,
@@ -28,13 +27,14 @@ export class SigninComponent{
   
   login(): any{
     this.crudService.getUser(this.userModel).subscribe(data =>{
+      this.userModel = data;
       if (data.email === this.userModel.email){
         this.snackBar.open('¡Bienvenid@ '+data.nick+'!', undefined, {
           duration: 2000,        
         })
         
         if (data.type == 0){
-          this.router.navigateByUrl('/admin/home');
+          this.router.navigateByUrl('/admin/home/'+this.userModel.id);
         }
         else if (data.type == 1){
           this.router.navigateByUrl('/professor/home');
