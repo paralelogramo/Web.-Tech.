@@ -10,59 +10,49 @@
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <p>{{userModel.mainName}}</p>
+              <p class = "name">{{userModel.mainName}}</p>
             </mat-list-item>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-              <p>{{userModel.surName}}</p>
+              <p class = "lastName">{{userModel.surName}}</p>
             </mat-list-item>
           </div>
         </div>
-        <mat-divider></mat-divider>
+        <mat-divider class = "divisor"></mat-divider>
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button (click) = "goCounts()">Cuentas</button>
-            </mat-list-item>
-          </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
-          <div fxLayout="column" flex="50">
-            <mat-list-item>
-                <button mat-raised-button (click) = "goModules()">Modulos</button>
+                <button mat-raised-button class = "button" (click) = "goCounts()">Cuentas</button>
             </mat-list-item>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button (click) = "goEvents()">Eventos</button>
+                <button mat-raised-button class = "button" (click) = "goModules()">Modulos</button>
             </mat-list-item>
           </div>
         </div>
+      
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button (click) = "goDependencies()">Dependencias</button>
+                <button mat-raised-button class = "button" (click) = "goDependencies()">Dependencias</button>
             </mat-list-item>
           </div>
         </div>
-        <mat-divider></mat-divider>
+        
+        <mat-divider class = "divisor"></mat-divider>
+
+        <div class="paddingButton"> </div>
+
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
-            <mat-list-item>
-                <button mat-raised-button (click) = "goEditProfile()">Editar Perfil</button>
-            </mat-list-item>
-          </div>
-        </div>
-        <mat-divider></mat-divider>
-        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
-          <div fxLayout="column" flex="50">
-            <mat-list-item>
-              <button mat-raised-button color="primary" (click)="closeSession()">Cerrar Sesión</button>
+            <mat-list-item class>
+              <button mat-raised-button class = "closeButton" (click)="closeSession()">Cerrar Sesión</button>
             </mat-list-item>
           </div>
         </div>
