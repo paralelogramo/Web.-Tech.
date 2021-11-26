@@ -102,3 +102,7 @@ table{
 .selected {
   background-color: red;
 }
+
+.dialog {
+  justify-content: center;
+}
