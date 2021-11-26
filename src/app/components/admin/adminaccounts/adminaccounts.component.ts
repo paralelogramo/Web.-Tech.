@@ -4,7 +4,6 @@ import { User } from '../../../services/Users';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CrudService } from '../../../services/crud.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { inject } from '@angular/core/testing';
 import { DialogComponent } from './dialog/dialog.component';
 
 const SIZE: number = 10;
@@ -22,7 +21,7 @@ export class AdminaccountsComponent implements OnInit {
   isStudent: boolean = false;
   isAproved: number|undefined = 0;
 
-  displayedColumns: string[] = ['id','mainName', 'surName', 'email'];
+  displayedColumns: string[] = ['id','mainName', 'surName', 'email']
   
   users: User[] = [];
   allUsers: User[] = [];

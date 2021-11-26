@@ -29,12 +29,12 @@ export class DialogAddComponent implements OnInit {
         this.snackBar.open('Ups! Revisa los campos!', undefined, {
           duration: 2000,        
         })
-        this.dialogRef.close({event: 'close'})
       }
       else{
         this.snackBar.open('Dependencia Registrada con Éxito!', undefined, {
           duration: 2000,        
         })
+        this.dialogRef.close({event: 'close'})
       }
     })
   }

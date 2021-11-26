@@ -12,7 +12,7 @@ import { MatSelectChange } from '@angular/material/select';
 })
 export class DialogComponent implements OnInit {
   accountTypes: string[] = ['Administrador','Operativo','Profesor']
-  userModel: User = new User(undefined, undefined, undefined, undefined, undefined, undefined, undefined, 0, undefined, undefined);
+  userModel: User = new User(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 0, undefined, undefined);
   type: string | undefined = undefined;
 
   constructor(

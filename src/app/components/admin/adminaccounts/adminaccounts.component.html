@@ -163,6 +163,12 @@
               <input matInput [readonly]="true" value = {{typeAccount}}>
             </mat-form-field>
           </mat-list-item>
+          <mat-list-item class="disabledFormField">
+            <mat-form-field *ngIf="typeAccount == 'Profesor' || typeAccount == 'Estudiante'">
+              <mat-label>Carrera</mat-label>
+              <input matInput [readonly]="true" value = {{userToShow.career}}>
+            </mat-form-field>
+          </mat-list-item>
           <!-- <mat-list-item class="disabledFormField" *ngIf="isStudent">
               <mat-label>Autorizado</mat-label>
               <mat-slide-toggle
