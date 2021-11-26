@@ -103,10 +103,6 @@ export class AdmindependenciesComponent implements OnInit {
     this.router.navigateByUrl('/admin/modules/'+this.userSession.id);
   }
 
-  goEvents(): any{
-    this.router.navigateByUrl('/admin/events/'+this.userSession.id);
-  }
-
   goEditProfile(): any{
     this.router.navigateByUrl('/admin/editprofile/'+this.userSession.id);
   }

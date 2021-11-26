@@ -32,11 +32,15 @@ table{
 
 .header{
   height: 10%;
-  background-color: red;
+  background-color: white;
 }
 
-.middle{
-  background-color: brown;
+.middle-left{
+
+}
+
+.middle-right{
+  background-color: rgb(67, 67, 235);
   height: 30%;
 }
 
@@ -46,7 +50,7 @@ table{
 
 .footer{
   height: 10%;
-  background-color: green;
+  background-color: rgb(67, 67, 235);
 }
 
 .avatar{
@@ -86,15 +90,65 @@ table{
 }
 
 .sideNavContent{
-  background-color: yellow;
+  background-color: white;
   height: 100%;
 }
 
 .internalDiv{
   width: 100%;
+
 }
 
 .tableTile{
   margin-top: 5%;
   margin-bottom: 10%;
 }
+
+.name{
+  font-size: 14pt;
+  font-weight: bold;
+  color: white;
+}
+
+.lastName{
+  font-size: 14pt;
+  font-weight: bold;
+  color: white;
+}
+
+.button{
+  width:150px;
+}
+
+.closeButton{
+  background-color:rgb(67, 67, 235);
+  color: white;
+  border: 1px solid white;
+  width:150px;
+}
+
+.currentButton{
+  background-color: #0583F2;
+  border: 1px solid white;
+  color: white;
+  width:150px;
+}
+
+.divisor{
+  background-color: white;
+}
+
+.addButton{
+  background-color: rgb(84, 84, 243);
+  color: white;
+}
+
+.textFooter{
+  color: white;
+}
+
+.paddingButton{
+  padding-bottom: 115%;
+}
+
+

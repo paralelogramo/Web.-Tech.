@@ -106,3 +106,50 @@ table{
 .dialog {
   justify-content: center;
 }
+
+.name{
+  font-size: 14pt;
+  font-weight: bold;
+  color: white;
+}
+
+.lastName{
+  font-size: 14pt;
+  font-weight: bold;
+  color: white;
+}
+
+.button{
+  width:150px;
+}
+
+.closeButton{
+  background-color:rgb(67, 67, 235);
+  color: white;
+  border: 1px solid white;
+  width:150px;
+}
+
+.currentButton{
+  background-color: #0583F2;
+  border: 1px solid white;
+  color: white;
+  width:150px;
+}
+
+.divisor{
+  background-color: white;
+}
+
+.addButton{
+  background-color: rgb(84, 84, 243);
+  color: white;
+}
+
+.textFooter{
+  color: white;
+}
+
+.paddingButton{
+  padding-bottom: 115%;
+}

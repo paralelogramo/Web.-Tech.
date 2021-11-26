@@ -10,59 +10,57 @@
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-              <p>{{userSession.mainName}}</p>
+              <p class = "name">{{userSession.mainName}}</p>
             </mat-list-item>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-              <p>{{userSession.surName}}</p>
+              <p class = "lastName">{{userSession.surName}}</p>
             </mat-list-item>
           </div>
         </div>
-        <mat-divider></mat-divider>
+        <mat-divider class = "divisor"></mat-divider>
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button color="warn">Cuentas</button>
-            </mat-list-item>
-          </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
-          <div fxLayout="column" flex="50">
-            <mat-list-item>
-                <button mat-raised-button (click) = "goModules()">Modulos</button>
+                <button mat-raised-button class = "currentButton">Cuentas</button>
             </mat-list-item>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button (click) = "goEvents()">Eventos</button>
+                <button mat-raised-button class = "button" (click) = "goModules()">Modulos</button>
             </mat-list-item>
           </div>
         </div>
+        
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button (click) = "goDependencies()">Dependencias</button>
+                <button mat-raised-button class = "button" (click) = "goDependencies()">Dependencias</button>
             </mat-list-item>
           </div>
         </div>
-        <mat-divider></mat-divider>
+
+        <mat-divider class = "divisor"></mat-divider>
+
+        <div class="paddingButton"> </div>
+        
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button (click) = "goEditProfile()">Editar Perfil</button>
+                <button mat-raised-button class = "button" (click) = "goEditProfile()">Editar Perfil</button>
             </mat-list-item>
           </div>
         </div>
-        <mat-divider></mat-divider>
+
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
-            <mat-list-item>
-              <button mat-raised-button color="primary" (click)="closeSession()">Cerrar Sesión</button>
+            <mat-list-item class>
+              <button mat-raised-button class = "closeButton" (click)="closeSession()">Cerrar Sesión</button>
             </mat-list-item>
           </div>
         </div>
@@ -76,11 +74,11 @@
 
       <!-- Header Tile -->
       <mat-grid-tile class="header" [colspan]="3" [rowspan]="1">
-        <button mat-stroked-button (click)="openDialog()">Añadir cuenta</button>
+        <button mat-stroked-button class = "addButton" (click)="openDialog()">Añadir cuenta</button>
       </mat-grid-tile>
 
       <!-- Middle Tile -->
-      <mat-grid-tile class="middle" [colspan]="2" [rowspan]="13">
+      <mat-grid-tile class="middle-left" [colspan]="2" [rowspan]="13">
         <div class="internalDiv">
           <mat-grid-list cols="1" rowHeight="4em">
             <mat-grid-tile [rowspan]="10" class="tableTile">
@@ -110,6 +108,11 @@
                   <td mat-cell *matCellDef="let user"> {{user.email}} </td>
                 </ng-container>
 
+                <!-- Manage items -->
+                <ng-container >
+                  <th mat-header-cell *matHeaderCellDef> Info </th>
+                </ng-container>
+
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="showUser(row)"></tr>
               </table>
@@ -128,10 +131,11 @@
         
       </mat-grid-tile>
 
-      <mat-grid-tile [colspan]="1" [rowspan]="13" class="middle">
+      <!-- CARTA DERECHA DE INFORMACIÓN       -->
+      <mat-grid-tile [colspan]="1" [rowspan]="13" class="middle-right">
         <mat-list class="disabledFormContainer" *ngIf="userReady == true">
-          <mat-list-item class="imgPrev">
-              <img class="avatarPrev" src="https://i.ibb.co/8BFzxDR/user-1.png">
+          <mat-list-item class="imgPrev" >
+              <img class="avatarPrev"  src="https://i.ibb.co/8BFzxDR/user-1.png">    
           </mat-list-item>
           <mat-list-item class="disabledFormField">
             <mat-form-field>
@@ -181,7 +185,7 @@
 
       <!-- Footer Tile -->
       <mat-grid-tile class="footer" [colspan]="3" [rowspan]="1">
-        Un producto de RatonesOnTour S.A.
+        <p class  = "textFooter"> Un producto de RatonesOnTour S.A. </p>
       </mat-grid-tile>
 
     </mat-grid-list>

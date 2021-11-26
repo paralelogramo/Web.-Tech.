@@ -10,14 +10,50 @@
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-              <p>{{userSession.mainName}}</p>
+              <p class = "name">{{userSession.mainName}}</p>
             </mat-list-item>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-              <p>{{userSession.surName}}</p>
+              <p class = "lastName">{{userSession.surName}}</p>
+            </mat-list-item>
+          </div>
+        </div>
+
+        <mat-divider class = "divisor"></mat-divider>
+
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <button mat-raised-button  class = "button" (click) = "goAccounts()">Cuentas</button>
+            </mat-list-item>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <button mat-raised-button  class = "button" (click) = "goModules()">Modulos</button>
+            </mat-list-item>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <button mat-raised-button class = "currentButton">Dependencias</button>
+            </mat-list-item>
+          </div>
+        </div>
+
+        <mat-divider class = "divisor"></mat-divider>
+
+        <div class="paddingButton"> </div>
+        
+        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
+          <div fxLayout="column" flex="50">
+            <mat-list-item>
+                <button mat-raised-button class = "button" (click) = "goEditProfile()">Editar Perfil</button>
             </mat-list-item>
           </div>
         </div>
@@ -25,44 +61,7 @@
         <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
           <div fxLayout="column" flex="50">
             <mat-list-item>
-                <button mat-raised-button (click) = "goAccounts()">Cuentas</button>
-            </mat-list-item>
-          </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
-          <div fxLayout="column" flex="50">
-            <mat-list-item>
-                <button mat-raised-button (click) = "goModules()">Modulos</button>
-            </mat-list-item>
-          </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
-          <div fxLayout="column" flex="50">
-            <mat-list-item>
-                <button mat-raised-button (click) = "goEvents()">Eventos</button>
-            </mat-list-item>
-          </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
-          <div fxLayout="column" flex="50">
-            <mat-list-item>
-                <button mat-raised-button color="warn">Dependencias</button>
-            </mat-list-item>
-          </div>
-        </div>
-        <mat-divider></mat-divider>
-        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
-          <div fxLayout="column" flex="50">
-            <mat-list-item>
-                <button mat-raised-button (click) = "goEditProfile()">Editar Perfil</button>
-            </mat-list-item>
-          </div>
-        </div>
-        <mat-divider></mat-divider>
-        <div fxLayout="row" fxLayoutAlign="center" flex fxLayoutGap="10px">
-          <div fxLayout="column" flex="50">
-            <mat-list-item>
-              <button mat-raised-button color="primary" (click)="closeSession()">Cerrar Sesión</button>
+              <button mat-raised-button class = "closeButton" (click)="closeSession()">Cerrar Sesión</button>
             </mat-list-item>
           </div>
         </div>
