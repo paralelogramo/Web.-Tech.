@@ -7,6 +7,7 @@ export class User{
         public email?: String,
         public pass?: String,
         public type?: number,
+        public career?: string,
         public isAproved?: number,
         public avatar?: Blob,
         public refAdmin?: number,

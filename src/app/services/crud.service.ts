@@ -35,7 +35,7 @@ export class CrudService {
     return this.clienteHttp.post<User>(`${this.baseUrl}/getUserById.php`,id);
   }
 
-  getUserByIdReduced(id: number): Observable<User>{
+  getUserByIdReduced(id: number | undefined): Observable<User>{
     return this.clienteHttp.post<User>(`${this.baseUrl}/getUserByIdReduced.php`,id);
   }
 
@@ -53,5 +53,9 @@ export class CrudService {
 
   deleteDependence(id: number){
     return this.clienteHttp.delete(`${this.baseUrl}/deleteDependence.php?delete=${id}`)
+  }
+
+  getProfesorModule(){
+    return this.clienteHttp.get<any>(`${this.baseUrl}/getProfesorModule.php`)
   }
 }

@@ -38,6 +38,7 @@ import { DialogComponent } from './components/admin/adminaccounts/dialog/dialog.
 import { DialogAddComponent } from './components/admin/admindependencies/dialog-add/dialog-add.component';
 import { DialogEditComponent } from './components/admin/admindependencies/dialog-edit/dialog-edit.component';
 import { DialogDeleteComponent } from './components/admin/admindependencies/dialog-delete/dialog-delete.component';
+import { MatSortModule } from '@angular/material/sort';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'signin' },
@@ -105,7 +106,8 @@ const routes: Routes = [
     MatPaginatorModule,
     MatSlideToggleModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSortModule
   ],
   exports: [
     RouterModule,

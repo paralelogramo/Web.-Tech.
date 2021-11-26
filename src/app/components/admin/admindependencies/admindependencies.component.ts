@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from '../../../services/Users';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CrudService } from '../../../services/crud.service';
@@ -6,8 +6,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { Dependence } from '../../../services/Dependence';
 import { DialogAddComponent } from './dialog-add/dialog-add.component';
-import { MatRow } from '@angular/material/table';
 import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 const SIZE: number = 10;
 
@@ -24,7 +26,8 @@ export class AdmindependenciesComponent implements OnInit {
   moduleReady: boolean = false;
   displayedColumns: string[] = ['id', 'name', 'capacity', 'location'];
 
-  dependences: Dependence[] = [];
+  dataSource = new MatTableDataSource<Dependence>();
+
   allDependences: Dependence[] = [];
 
   page_size: number = SIZE;
@@ -34,12 +37,15 @@ export class AdmindependenciesComponent implements OnInit {
 
   selectedRow: any;
 
+  @ViewChild(MatSort) sort: MatSort;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private crudService: CrudService,
     public dialog: MatDialog,
     public dialog2: MatDialog,
+    private snackBar: MatSnackBar,
   ) {
     this.route.params.subscribe( params => {
       this.getSessionUser(params.id)
@@ -48,6 +54,10 @@ export class AdmindependenciesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
   }
 
   selectDependence(row: any): any{
@@ -71,12 +81,12 @@ export class AdmindependenciesComponent implements OnInit {
   getAllDependences(): any{
     this.crudService.getAllDependences().subscribe((data) => {
       this.allDependences = data;
-      this.dependences = this.allDependences.slice(0,this.page_size)
+      this.dataSource.data = this.allDependences.slice(0,this.page_size)
     })
   }
 
   onPageChange(event: PageEvent): void{    
-    this.dependences = this.allDependences.slice(event.pageIndex*event.pageSize,(event.pageIndex+1)*event.pageSize)
+    this.dataSource.data = this.allDependences.slice(event.pageIndex*event.pageSize,(event.pageIndex+1)*event.pageSize)
   }
 
   getSessionUser(id: number): any{
@@ -116,15 +126,20 @@ export class AdmindependenciesComponent implements OnInit {
 
   openDialog2(): void{
     if(this.selectedRow == undefined){
-      // aun no selecciona ninguna fila
+      this.snackBar.open('Debes seleccionar una sala primero!', undefined, {
+        duration: 2000,
+        verticalPosition: 'bottom',
+        horizontalPosition: 'center',
+        panelClass: 'center'
+      })
     }
     else{
       const dialog = this.dialog2.open(DialogDeleteComponent)
-      dialog.afterClosed().subscribe(res => {
-        
+      dialog.afterClosed().subscribe((res: string) => {
         if(res == "yes"){
-          this.crudService.deleteDependence(this.selectedRow.id)
-          this.getAllDependences()
+          this.crudService.deleteDependence(this.selectedRow.id).subscribe((res) =>{
+            this.getAllDependences()
+          })
         }
       })
     }
