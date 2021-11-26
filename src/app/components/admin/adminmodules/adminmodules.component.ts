@@ -84,11 +84,6 @@ export class AdminmodulesComponent implements OnInit {
     this.router.navigateByUrl('/admin/dependencies/'+this.userSession.id);
   }
 
-
-  goEditProfile(): any{
-    this.router.navigateByUrl('/admin/editprofile/'+this.userSession.id);
-  }
-
   closeSession(): any{
 
     //Aqui falta borrar los token
