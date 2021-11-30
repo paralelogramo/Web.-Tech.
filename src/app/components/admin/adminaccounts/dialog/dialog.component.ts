@@ -37,7 +37,7 @@ export class DialogComponent implements OnInit {
       this.userModel.type = 2
     }
     
-    this.crudService.register(this.userModel).subscribe((resp: any) => {
+    this.crudService.register(this.userModel).subscribe((resp) => {
       if(resp.resultado == false){
         this.snackBar.open('Ups! Revisa las casillas!', undefined, {
           duration: 2000,        
@@ -49,7 +49,11 @@ export class DialogComponent implements OnInit {
           duration: 2000,        
         })
       }
+    },
+    (error) =>{
+      console.log(error)
     })
+    
   }
 
   closeDialog(): void{    

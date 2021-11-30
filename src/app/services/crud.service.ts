@@ -14,20 +14,11 @@ export class CrudService {
 
   constructor( private clienteHttp: HttpClient ) {}
 
-  register(user: User): Observable<any>{
-    let headers= new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
-    const httpOptions = {
-      headers: headers
-    };
-    return this.clienteHttp.post(`${this.baseUrl}/registerUser.php`,user)
+  register(user: User): Observable<any>{    
+    return this.clienteHttp.post(`${this.baseUrl}/registerUser.php`,user, {responseType: 'text'});
   }
 
   getUser(user: User): Observable<User>{
-    let headers= new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
-    const httpOptions = {
-      headers: headers
-    };
-
     return this.clienteHttp.post<User>(`${this.baseUrl}/getUser.php`,user);
   }
 

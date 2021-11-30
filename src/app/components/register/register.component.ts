@@ -73,12 +73,12 @@ export class RegisterComponent implements OnInit {
       console.log(resp)
       if(resp.resultado == false){
         this.snackBar.open('Ups! Revisa las casillas!', undefined, {
-          duration: 2000,        
+          duration: 3000,
         })
       }
       else{
         this.snackBar.open('Usuario Registrado con exito!', undefined, {
-          duration: 2000,        
+          duration: 3000,
         })
         this.router.navigateByUrl('/signin');
       }
